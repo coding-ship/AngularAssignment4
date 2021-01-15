@@ -1,0 +1,21 @@
+th{
+  
+    padding: 10px;
+    width: 40%;
+    
+}
+table {
+   
+    padding: 10px;
+    width: 40%;
+}
+.center {
+    margin: auto;
+    width: 50%;
+   
+    padding: 10px;
+  }
+  td{
+    padding: 10px;
+      text-align: center;
+  }

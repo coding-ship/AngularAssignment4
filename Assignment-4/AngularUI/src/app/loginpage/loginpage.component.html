@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+    <div class="logo-image">
+          <img src="https://www.jcrinc.com/-/media/enterprise-imagery/logos/jcr-r-mark.png?h=152&w=532&hash=B19DACCFCF1F6ACDB0D829B425801D6F" class="img-fluid">
+    </div>
+</a>
+  <h1>Joint Commission Resources</h1>
+</nav>
+
+<div class = "loginbox">
+  <h2>Login</h2>
+  <div [hidden]="Form.untouched || Form.valid "
+  class="alert alert-danger">All Fields Are Required!
+</div>
+  <div *ngIf="statusdata==false"
+  class="alert alert-danger">Invalid Username OR
+Password.
+</div>
+  <form #Form="ngForm" (ngSubmit)="onSubmit(Form.value)" >
+    <div class="form-group">
+      <label>Username</label>
+             <input id="name" name="name" placeholder="Enter Username" class="form-control"
+            required 
+            [(ngModel)]="users.name" #name="ngModel" >
+  <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Username is required
+        </div> 
+    </div>
+  
+    <div class="form-group">
+      <label>Password</label>
+      <input id="password" name="password" placeholder="Enter Password" class="form-control" type="password"
+            required 
+            [(ngModel)]="users.password" #password="ngModel" >
+          
+              <div [hidden]="password.valid || password.pristine"
+           class="alert alert-danger">
+        Password is required
+      </div> 
+    </div>
+  
+   
+  
+    <button type="submit" class="block" [disabled]="!Form.valid">Login</button>
+    <br>
+    <button type="button" class="btn btn-dark" (click)="Signup()" >Signup</button>
+    <button type="reset" class="btn btn-secondary" id="reset" >Reset</button>
+    
+    
+  </form>
+</div>
